@@ -1,0 +1,8 @@
+<div class="user-list-holder">
+  <h5 class="title">User List</h5>
+  <ng-container *ngFor="let user of users">
+    <app-user-list-item [firstName]="user.firstName" [lastName]="user.lastName" [title]="user.title"
+      [imageUrl]="user.picture" [email]="user.email" [phone]="user.phone"></app-user-list-item>
+  </ng-container>
+
+</div>

@@ -1,0 +1,40 @@
+.user-list-container{
+  max-height: calc(100vh - 65px);
+  overflow-y: auto;
+}
+.btn-load-more{
+  color: #0d6efd;
+  border:0;
+  margin-top: 1.5rem;
+}
+.welcome-message{
+  font-weight: bold;
+  font-size: 1rem;
+}
+.content-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center
+}
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+

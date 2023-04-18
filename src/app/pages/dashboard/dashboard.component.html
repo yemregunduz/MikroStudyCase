@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="user-list-container col-sm-12 col-md-4 col-lg-4 col-xl-3">
+    <app-user-list *ngIf="userResponse" [users]="userResponse.data"></app-user-list>
+    <app-spinner-button
+      classes="btn btn-load-more"
+      [loading]="loading"
+      [disabled]="limit>=50 || loading"
+      text="Load More..."
+      (onClick)="loadMore()">
+    </app-spinner-button>
+  </div>
+  <div class="col-md-8 col-sm-12 col-md-4 col-lg-4 col-xl-9 content-container">
+    <img src="../../../assets/images/dashboard-image.png" class="img-fluid " alt="Dashboard Image" />
+    <p class="welcome-message">Mikro Yazılım A.Ş'ye hoşgeldiniz.</p>
+  </div>
+</div>
