@@ -8,6 +8,8 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { LoginComponent } from './login.component';
 import { SpinnerButtonComponent } from 'src/app/components/standalone/spinner-button/spinner-button.component';
 import { LoginService } from 'src/app/services';
+import { TextboxComponent } from 'src/app/components/standalone/textbox/textbox.component';
+import { LogoComponent } from 'src/app/components/standalone/logo/logo.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { LoginService } from 'src/app/services';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    LogoComponent,
+    TextboxComponent,
     RouterModule.forChild([{ path: '', component: LoginComponent }]),
   ],
   providers:[

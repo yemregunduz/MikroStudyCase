@@ -11,10 +11,13 @@ export class ConfigService {
   constructor(private http: HttpClient) { }
 
   load(): Observable<MikroStudyCaseConfig> {
-    return this.http.get<MikroStudyCaseConfig>(`./assets/config/appsettings.${environment.name}.json?v=${new Date().valueOf()}`)
+    const version = '1.0'; // sabit bir versiyon numarası test için
+    return this.http.get<MikroStudyCaseConfig>(`./assets/config/appsettings.${environment.name}.json?v=${version}`)
       .pipe(
-        tap(result => {ConfigService.AppSettings = result
-        console.log(result)}),
+        tap(result => {
+          ConfigService.AppSettings = result;
+          console.log(result);
+        }),
       );
   }
 }

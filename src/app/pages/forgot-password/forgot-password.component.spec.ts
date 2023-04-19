@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ForgotPasswordComponent } from './forgot-password.component';
+import { LogoComponent } from 'src/app/components/standalone/logo/logo.component';
+import { TextboxComponent } from 'src/app/components/standalone/textbox/textbox.component';
 
 describe('ForgotPasswordComponent', () => {
   let component: ForgotPasswordComponent;
@@ -8,7 +10,8 @@ describe('ForgotPasswordComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ForgotPasswordComponent ]
+      declarations: [ ForgotPasswordComponent ],
+      imports:[LogoComponent,TextboxComponent]
     })
     .compileComponents();
 

@@ -1,34 +1,21 @@
 <div class="login-body">
   <div class="card ">
     <div class="card-body d-flex flex-column justify-content-center align-items-center">
-      <img src="../../../assets/images/logo.svg" width="280" height="51">
-      <p class="fw-bold mt-3">Mikro Yazılım A.Ş'ye hoşgeldiniz.</p>
-      <span class="login-info">
-        <p class="mb-0 d-flex"><b>Test Email:</b>&nbsp; mikro@mikro.com.tr</p>
-        <p class="mb-0 d-flex"><b>Test Şifre:</b>&nbsp; 123456</p>
-      </span>
-      <form [formGroup]="loginForm" class="w-100" (keyup.enter)="login()">
-        <div class="mb-3">
-          <label for="username" class="custom-label">Email</label>
-          <input type="text" placeholder="Kayıtlı email adresinizi giriniz."  class="form-control w-100" formControlName="email" id="username">
-        </div>
-        <div class="mb-3">
-          <label for="password" class="custom-label">Şifre</label>
-          <input type="password" placeholder="Şifrenizi giriniz."  class="form-control" formControlName="password" id="password">
-        </div>
+      <app-logo></app-logo>
+      <p class="mt-3">Google Maps'e hoşgeldiniz.</p>
+      <form [formGroup]="loginForm" class="w-100" (keyup.enter)="loginForm.valid && login()">
+        <app-textbox  [formGroup]="loginForm" formControlName="email" type="email" labelText="Email"
+          placeholder="Kayıtlı email adresinizi giriniz.">
+        </app-textbox>
+        <app-textbox [formGroup]="loginForm" formControlName="password" type="password" labelText="Şifre"
+          placeholder="Şifrenizi giriniz">
+        </app-textbox>
         <div class="mb-3 d-flex justify-content-end">
           <a class="link-opacity-75-hover text-decoration-none" routerLink="/forgot-password">Şifremi Unuttum</a>
         </div>
-        <app-spinner-button
-          spinnerClass="text-white"
-          [loading]="loading"
-          [disabled]="loading || loginForm.invalid"
-          class="w-100"
-          type="button"
-          text="Giriş Yap"
-          classes="btn btn-primary w-100"
-          (onClick)="login()">
-      </app-spinner-button>
+        <app-spinner-button spinnerClass="text-white" [loading]="loading" [disabled]="loading || loginForm.invalid"
+          class="w-100" type="button" text="Giriş Yap" classes="btn btn-primary w-100" (onClick)="login()">
+        </app-spinner-button>
       </form>
     </div>
   </div>

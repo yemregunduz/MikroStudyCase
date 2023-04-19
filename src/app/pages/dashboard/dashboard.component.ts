@@ -21,12 +21,13 @@ export class DashboardComponent {
   async getAllUsers(pageRequest:PageRequest){
     this.loading = true
     this.userResponse= await this.userService.getUsers(pageRequest)
-
-    this.userResponse.data.map((user)=>{
-      user.email = Helpers.dummy.generateRandomEmailAddress(user.firstName,user.lastName)
-      user.phone = Helpers.dummy.generateRandomPhoneNumber()
-      return user
-    })
+    if(this.userResponse?.data?.length>0){
+      this.userResponse.data.map((user)=>{
+        user.email = Helpers.dummy.generateRandomEmailAddress(user.firstName,user.lastName)
+        user.phone = Helpers.dummy.generateRandomPhoneNumber()
+        return user
+      })
+    }
     this.loading = false
   }
   async loadMore(){
